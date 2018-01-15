@@ -1,0 +1,24 @@
+<div>
+  <mat-form-field>
+    <input matInput placeholder="First name" [(ngModel)]="newUser.first_name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Last name" [(ngModel)]="newUser.last_name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email" [(ngModel)]="newUser.email">
+  </mat-form-field>
+  <mat-form-field>
+    <input required matInput placeholder="Username" [(ngModel)]="newUser.username">
+  </mat-form-field>
+  <mat-form-field>
+    <input type='password' required matInput placeholder="Password" [(ngModel)]="newUser.password">
+  </mat-form-field>
+  <mat-form-field>
+    <input type='password' required matInput placeholder="Confirm password" [(ngModel)]="passwordConf">
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="accent" (click)="goLogin()">LOGIN</button>
+    <button color="primary" *ngIf="newUser.username && newUser.password === passwordConf" mat-raised-button (click)="register()">REGISTER</button>
+  </div>
+</div>

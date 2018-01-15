@@ -1,0 +1,28 @@
+<body>
+  <button (click)="openAddDialog()" mat-fab color="accent">
+    <mat-icon>add</mat-icon>
+  </button>
+  <div class="row">
+    <mat-card class="col col-xs-3" *ngFor="let note of notes">
+      <mat-card-header>
+        <mat-card-subtitle *ngIf="note.title">Title</mat-card-subtitle>
+        <mat-card-title *ngIf="note.title">{{note.title}}</mat-card-title>
+        <mat-card-subtitle *ngIf="note.description">Description</mat-card-subtitle>
+        <mat-card-title *ngIf="note.description">{{note.description}}</mat-card-title>
+        <mat-card-subtitle *ngIf="note.created">Date</mat-card-subtitle>
+        <mat-card-title *ngIf="note.created">{{note.created | date}}</mat-card-title>
+        <textarea disabled=true>{{note.content}}</textarea>
+        <mat-card-subtitle *ngIf="note.categoryName">Category</mat-card-subtitle>
+        <mat-card-title *ngIf="note.categoryName">{{note.categoryName}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-raised-button (click)="openEditDialog(note)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-raised-button (click)="delete(note)" color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</body>

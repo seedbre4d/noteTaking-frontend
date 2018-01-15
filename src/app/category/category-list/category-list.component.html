@@ -1,0 +1,39 @@
+<!-- <mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile *ngFor="let category of categories">
+      <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{category.name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-actions>
+            <button mat-button>EDIT</button>
+            <button mat-button>DELETE</button>
+          </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list> -->
+
+<body>
+  <button (click)="openAddDialog()" mat-fab color="accent">
+    <mat-icon>add</mat-icon>
+  </button>
+  <div class='row'>
+    <mat-card class="col col-xs-4" *ngFor="let category of categories">
+      <mat-card-header>
+        <mat-chip-list >
+          <mat-chip  color='accent' selected='true'>
+            {{category.name}}
+          </mat-chip>
+        </mat-chip-list>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-raised-button (click)="openEditDialog(category)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-raised-button (click)="delete(category)" color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</body>

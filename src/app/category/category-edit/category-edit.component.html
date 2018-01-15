@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Edit category</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="category.name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button *ngIf="category.name" mat-button (click)="updateCategory()">
+    <mat-icon>save</mat-icon>
+  </button>
+</div>

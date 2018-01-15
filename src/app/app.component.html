@@ -1,0 +1,20 @@
+<body>
+  <mat-sidenav-container>
+    <div>
+      <nav mat-tab-nav-bar>
+        <ng-container>
+          <a mat-tab-link *ngFor="let tabLink of tabLinks; let i = index" [routerLink]="tabLink.link" routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+            {{tabLink.label}}
+          </a>
+          <div style="position:fixed;top:0px;right:8px;">
+            <button mat-mini-fab color="warn" (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+            </button>
+          </div>
+        </ng-container>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-container>
+</body>

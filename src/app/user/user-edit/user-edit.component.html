@@ -1,0 +1,30 @@
+<body >
+  <div >
+    <mat-form-field>
+      <input matInput placeholder="First name" [(ngModel)]="user.first_name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Last name" [(ngModel)]="user.last_name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" [(ngModel)]="user.email">
+    </mat-form-field>
+    <mat-form-field>
+      <input required matInput placeholder="Username" [(ngModel)]="user.username">
+    </mat-form-field>
+    <mat-form-field>
+      <input type='password' required matInput placeholder="Password" [(ngModel)]="user.password">
+    </mat-form-field>
+    <mat-form-field>
+      <input type='password' required matInput placeholder="Confirm password" [(ngModel)]="passwordConf">
+    </mat-form-field>
+    <mat-form-field>
+      <input type='password' matInput placeholder="New password" [(ngModel)]="newPassword">
+    </mat-form-field>
+    <div>
+      <button mat-raised-button *ngIf="user.password === passwordConf && user.username" color="accent" (click)="save()">SAVE</button>
+      <button mat-raised-button *ngIf="user.password === passwordConf" color="warn" (click)="delete()">DELETE</button>
+    </div>
+  </div>
+</body>
+

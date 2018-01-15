@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Edit note</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput placeholder="Title" [(ngModel)]="note.title">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Description" [(ngModel)]="note.description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput required placeholder="Content" [(ngModel)]="note.content"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="note.created" ngmodel matInput [matDatepicker]="dp3" placeholder="Pick a date" disabled>
+        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder='Category' [(ngModel)]='selectedCategory'>
+          <mat-option *ngFor="let category of categories" [value]='category'>{{category.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="updateNote()">
+    <mat-icon>save</mat-icon>
+  </button>
+</div>
