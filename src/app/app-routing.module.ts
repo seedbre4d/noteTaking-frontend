@@ -3,6 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {
+    path: 'noteTaking-frontend',
+    redirectTo: 'note',
+    pathMatch: 'full'
+  },
+  {
     path: '',
     children: [
       {
